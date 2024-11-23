@@ -1,17 +1,23 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+matplotlib.rcParams.update({'font.size': 16.5})
 
-k = 1
-l = 1
-T = 1
-L = 1
 N = 100
-x = np.linspace(0,L,N)
+x = np.linspace(-1,1,N)
 
 def f(x):
-    y = k*T/2*l * np.log((L+x)/(L-x))
+
+    y = np.log((1+x)/(1-x))
 
     return y
 
-plt.plot(x,f(x))
+plt.figure(figsize=(8,6))
+plt.plot(x,f(x), color = 'firebrick')
+plt.xlabel('$R/L$')
+plt.ylabel('$\\tau$')
+plt.minorticks_on()
+plt.tick_params(which= 'major', direction='in',top = True,right =True,size = 10)
+plt.tick_params(which= 'minor', direction='in',top = True,right =True,size = 5)
+plt.grid(linestyle='--')
 plt.show()
