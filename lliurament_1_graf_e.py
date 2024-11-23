@@ -4,7 +4,7 @@ import matplotlib
 matplotlib.rcParams.update({'font.size': 16.5})
 
 N = 100
-x = np.linspace(-1,1,N)
+x = np.linspace(0,1,N)
 
 def f(x):
 
